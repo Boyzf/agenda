@@ -15,11 +15,16 @@ git clone https://githubcom/golang/text
 ```
 接着使用命令 `go install github.com/spf13/cobra/cobra` 安装cobra。
 如图，可以检验cobra安装成功。
+
 ![](img/1.png)
+
 ### cobra的简单使用
 按如下步骤创建一个小程序。
+
 ![](img/2.png)
+
 ![](img/3.png)
+
 打开生成的server.go文件，在`init`中添加：
 ```go
 registerCmd.Flags().StringP("user", "u", "Anonymous", "Help message for username")
@@ -30,8 +35,11 @@ username, _ := cmd.Flags().GetString("user")
 fmt.Println("register called by " + username)
 ```
 修改后的server.go如图所示。
+
 ![](img/4.png)
+
 在终端使用命令`go run main.go server --user=Testuser`进行测试，结果如图所示。
+
 ![](img/5.png)
 
 ## 项目开发
@@ -42,18 +50,33 @@ fmt.Println("register called by " + username)
 * logout：用户登出。从正在登录的列表中销去该用户。
 ### 测试结果
 register：
+
 ![](img/6.png)
+
 在User.json文件中可以看到成功注册的用户
+
 ![](img/7.png)
+
 用户名重复注册将会报错
+
 ![](img/8.png)
+
 login：
+
 ![](img/9.png)
+
 在currentUser.txt文件中可以看到当前登录的用户
+
 ![](img/10.png)
+
 用户名或密码错误将无法成功登录
+
 ![](img/11.png)
+
 logout：
+
 ![](img/12.png)
+
 在currentUser.txt文件中可以看到当前没有用户正在登录
+
 ![](img/13.png)
